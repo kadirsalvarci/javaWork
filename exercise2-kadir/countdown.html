@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        <p>How many seconds would you like the countdown timer to start from?</p>
+        <input id="userInput" type="number">
+        <div style="background-color: aquamarine; border:solid 3px" id="click-me" onclick="startCountdown()">Start Countdown</div>
+        <div id="countdown-text"></div>
+      </div>
+    <script>i
+      var isSetTimmeoutRunning = false;  
+      function startCountdown(){
+        if( isSetTimmeoutRunning == false ){
+          isSetTimmeoutRunning = true;
+          var userInput = Number(document.getElementById("userInput").value);
+          var userMilliseconds = userInput*1000;
+          setTimeout(function(){
+            isSetTimmeoutRunning = false;
+            alert(userInput + " seconds have passed.");
+          }, userMilliseconds);
+          var counter = userInput;
+          document.getElementById("countdown-text").innerHTML = "<b>" + counter + "</b>";
+          var interval = setInterval(function(){
+            counter--;
+            document.getElementById("countdown-text").innerHTML = "<b>" + counter + "</b>";
+            if( counter == 0 ){
+              document.getElementById("countdown-text").innerHTML = "";
+              clearInterval(interval);
+            }
+          }, 1000);
+        }
+      }
+    </script>
+</body>
+</html>

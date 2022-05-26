@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="id1">CHANGE COLOR<h1>
+        <button type="button" onclick="change()">
+        CLICK</button>
+    
+    <div id="liss">
+        <div id="hesap">
+            <button  type="text" onclick="lissd()">click </button>
+            <button type="button"  id="ex1"  onclick="ex1()">ex1</button>
+            <button type="button"  id="ex3"  onclick="exf3()">dynamic list</button>
+                <ul id="arrayF"></ul>
+                 <p id="ex3tx"></p>
+                 <p id="ex3tx2"></p>
+                 
+                 <p id="ex2txt"></p>
+                 <p id="ex2txt2"></p>
+
+            <label >list element</label> <br>
+            <input type="text" id="addlis"  value=""><br>
+             
+            <button type="button"  id="add"  onclick="add2()">add to list </button><br>
+            <div style="width: 300px; margin: 10px; height:200px;  ; "  id="myclock">clock</div>
+        <ul>
+
+        </ul>
+    </div>
+
+<script>
+
+function change(){
+   
+   if (document.getElementById('id1').style.color === "black")
+        {document.getElementById('id1').style.color = "red";
+   }
+    else
+        {document.getElementById('id1').style.color = "black";
+    }
+      
+      
+      }
+/*
+
+//function ex1(){
+var ex1For= [1,2,3,4,5];
+document.getElementById("ex3tx").innerHTML=ex1For;
+
+var sht = ex1For.shift();
+var add = ex1For.push(1);
+document.getElementById("ex3tx2").innerHTML=ex1For
+
+
+var arrayex2=[1, 2,"apple",4, "banana"];
+
+document.getElementById("ex2txt").innerHTML=arrayex2;
+var arrayex22=arrayex2.toString();
+document.getElementById("ex2txt2").innerHTML=arrayex2;
+
+
+*/
+
+
+/*
+//ex2
+//function ex2(){
+    var ex1For= [1,2,3,4,5];
+    document.getElementById("ex3tx").innerHTML=ex1For;
+    
+    var sht = ex1For.shift();
+    var add = ex1For.push(1);
+    document.getElementById("ex3tx2").innerHTML=ex1For
+    //}
+/*
+    // exercice 3 
+function lissd(){
+
+var array=[1, 2,3, 5,4, 6, 7, 8, 9, 10];
+
+array.forEach(function (item){
+    var li=document.createElement("li");
+    var x = document.createTextNode(item);
+    li.appendChild(x);
+    var result=document.getElementById("liss").appendChild(li);
+
+});
+}
+*/
+//exercice 3 (2)
+
+var array=[1, 2,3,4,5];
+function exf3(){
+var text="";
+    for( var i=0; i<array.length; i++){
+        text +="<li>"+array[i]+"</li>";
+
+    }
+
+document.getElementById("arrayF").innerHTML=text;
+
+}
+console.log(text);
+
+
+function add2(){
+    
+var f= document.getElementById("addlis").value;
+//text.push(f);text
+document.getElementById("arrayF").innerHTML += "<li>"+f+"</li>";
+document.getElementById("addlis").value="";
+
+
+}
+
+
+
+
+
+
+
+
+
+
+//exercise5
+    
+let myVar = setInterval(myTimer ,1000);
+function myTimer() {
+  const d = new Date();
+  document.getElementById("myclock").innerHTML = d.toLocaleTimeString();
+}
+
+/*
+//simuler for ex3
+for (i=0; i < 10; i ++){
+
+    var li=document.createElement("li");
+    var x = document.createTextNode(i);
+    li.appendChild(x);
+    document.getElementById("liss").appendChild(li)
+    
+
+}
+*/
+
+//exercice 4
+
+</script>
+
+</body>
+</html>
